@@ -87,7 +87,7 @@ const OTP = () => {
         <View style={{ flex: 1, alignItems: "center" , backgroundColor : AppTheme.ButtonGreenColor}}>
 
  
-            <View style={{width : '100%', alignItems: 'center' , backgroundColor : "white" , height : '70%' , paddingHorizontal : 50 , borderBottomRightRadius : 30 , borderBottomLeftRadius : 30}}>
+            <View style={{width : '100%', alignItems: 'center' , backgroundColor : "#FFF" , height : '70%' , paddingHorizontal : 50 , borderBottomRightRadius : 30 , borderBottomLeftRadius : 30}}>
             <Text style={{ alignSelf: "center", marginLeft: 20, fontSize: 28  , marginTop : 60}}>OTP</Text>
 
               <CodeField
@@ -99,7 +99,7 @@ const OTP = () => {
             setValue(t)
         }}
         cellCount={CELL_COUNT}
-        rootStyle={{backgroundColor:"white" , width:250 , height:50 , alignItems : "center" , marginTop : 80}}
+        rootStyle={{backgroundColor:"#FFF" , width:250 , height:50 , alignItems : "center" , marginTop : 80}}
         keyboardType="number-pad"
         textContentType="oneTimeCode"
         renderCell={({ index, symbol, isFocused }) => (
@@ -138,7 +138,7 @@ const OTP = () => {
                     //apiPost()
                      Navigation.push("AppStack",{component:{name:"Workshop" , options: {  topBar: { backButton:{ visible: false}, visible: true , title : { text : ""} } } } })
                 }}>
-                    <Text style={{ color: "white" }}>
+                    <Text style={{ color: "#FFF" }}>
                         Sign In
                     </Text>
                 </TouchableOpacity>

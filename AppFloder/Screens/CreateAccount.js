@@ -118,7 +118,7 @@ const CreateAccount = () => {
     };
 
     return (
-        <View style={{flex:1,backgroundColor:isDarkTheme?"balck":"white"}}>
+        <View style={{flex:1,backgroundColor:isDarkTheme?"#000":"#FFF"}}>
             <ScrollView>
                 <View style={{height:210,width:"100%",alignItems:"center",justifyContent:"center"}}>
                     {/* <Image
@@ -133,7 +133,7 @@ const CreateAccount = () => {
                         />
                     </View>
                 </View>
-                <View style={{ width: '100%', backgroundColor: isDarkTheme?"balck":"white", paddingHorizontal: 20, borderBottomRightRadius: 30, borderBottomLeftRadius: 30 }}>
+                <View style={{ width: '100%', backgroundColor: isDarkTheme?"#000":"#FFF", paddingHorizontal: 20, borderBottomRightRadius: 30, borderBottomLeftRadius: 30 }}>
                     <Text style={{fontSize:28,marginTop:10,fontWeight:"bold",color:isDarkTheme?"#FFF":"#000"}}>Tell us about you</Text>
                     <Text style={{ alignSelf: "flex-start", fontSize: 14, marginTop: 20,color:isDarkTheme?"#FFF":"#000" }}>Full Name</Text>
                     <CustomTextfield value={userName} setValue={setuserName} style={{ marginTop: 10 }} placeholder="Full Name" />
@@ -231,7 +231,7 @@ const CreateAccount = () => {
                         {otpLoader ? 
                             <ActivityIndicator color={"#FFF"} />
                         :
-                            <Text style={{color:"white"}}>
+                            <Text style={{color:"#FFF"}}>
                                 Register
                             </Text>
                         }
@@ -284,7 +284,7 @@ const SuccessPopup = ({ visible, setVisible }) => {
             <View style={{ backgroundColor: "rgba(0,0,0,0.8)", flex: 1, alignItems: "center", justifyContent: "center" }}>
 
 
-                <View style={{ width: "80%", height: "50%", borderRadius: 20, alignItems: "center", justifyContent: "center", backgroundColor: 'white' }}>
+                <View style={{ width: "80%", height: "50%", borderRadius: 20, alignItems: "center", justifyContent: "center", backgroundColor: '#FFF' }}>
 
                     <Image style={{ width: 100, height: 100 }} source={require("../Assets/Vector.png")} resizeMode="contain" />
 
@@ -302,7 +302,7 @@ const SuccessPopup = ({ visible, setVisible }) => {
                         }, 100);
 
                     }}>
-                        <Text style={{ color: "white", fontSize: 18 }}>
+                        <Text style={{ color: "#FFF", fontSize: 18 }}>
                             OK
                         </Text>
                     </TouchableOpacity>

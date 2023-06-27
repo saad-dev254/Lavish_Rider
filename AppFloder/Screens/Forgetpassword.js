@@ -107,7 +107,7 @@ const Forgetpassword = (props) => {
                     {loading ? 
                         <ActivityIndicator color={"#FFF"} />
                     :    
-                        <Text style={{ color: "white" }}>
+                        <Text style={{ color: "#FFF" }}>
                             Reset Password
                         </Text>
                     }

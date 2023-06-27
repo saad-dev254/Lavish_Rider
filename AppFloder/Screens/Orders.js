@@ -46,18 +46,25 @@ const Orders = () => {
     };
     const getOrdersHandle = async () => {
         try {
+            const user_data = JSON.parse(await AsyncStorage.getItem("userData"));
+            console.log("USER ID =====> ", user_data?.id);
             setLoader(true);
+
+            var formdata = new FormData();
+            formdata.append("id", "23");
+
             var requestOptions = {
-                method: 'GET',
-                redirect: 'follow',
+                method: 'POST',
+                body: formdata,
+                redirect: 'follow'
             };
               
-            fetch('https://www.lavishdxb.com/api/orders', requestOptions)
+            fetch('https://www.lavishdxb.com/api/get/rider-orders', requestOptions)
             .then((response) => response.json())
             .then((result) => {
                 setLoader(false);
                 if (result?.code === 200) {
-                    setAllOrders(result?.orderdata);
+                    setAllOrders(result?.RiderOrders);
                 };
             }).catch((error) => {
                 setLoader(false);
@@ -193,20 +200,8 @@ const Orders = () => {
     };
     const routingHandle = (lat, lng) => {
         try {
-            console.log("lat =====> ", lat);
-            console.log("lng =====> ", lng);
-            // const scheme = Platform.select({ ios: 'maps://0,0?q=', android: 'geo:0,0?q=' });
-            // const latLng = `${lat},${lng}`;
-            // const label = 'Custom Label';
-            // const url = Platform.select({
-            //     ios: `${scheme}${label}@${latLng}`,
-            //     android: `${scheme}${latLng}(${label})`
-            // });
-
-                
-            // Linking.openURL(url);
             const coordinates = [
-                { latitude: currentLatitude, longitude: currentLongitude }, // Example coordinate 1
+                // { latitude: currentLatitude, longitude: currentLongitude }, // Example coordinate 1
                 { latitude: lat, longitude: lng }, // Example coordinate 2
                 // Add more coordinates as needed
             ];
@@ -405,12 +400,11 @@ const Orders = () => {
                                         <View style={{flexDirection:"row"}}>
                                             <View style={{flex:1}}>
                                                 <Text style={[styles.heading,{color:isDarkTheme?"#FFF":"#000",fontSize:14,fontWeight:"700"}]}>
-                                                    {/* Customer Name */}
                                                     {val?.name}
                                                 </Text>
-                                                {/* <Text style={[styles.heading,{color:isDarkTheme?"#FFF":"#000"}]}>
-                                                    {val?.user_name}
-                                                </Text> */}
+                                                <Text style={[styles.heading,{color:isDarkTheme?"#FFF":"#000",fontSize:14,fontWeight:"700",marginTop:8}]}>
+                                                    {`${val?.aptt_villa_office}, ${val?.building}`}
+                                                </Text>
                                             </View>
                                             {orderStatus?.toLowerCase()==="delivered" ? 
                                                 <TouchableOpacity 
@@ -425,7 +419,7 @@ const Orders = () => {
                                                         borderRadius: 6,
                                                         alignItems: "center",
                                                         flexDirection: "row",
-                                                        justifyContent: "center",
+                                                        justifyContent: "flex-start",
                                                         paddingHorizontal: 14,
                                                         backgroundColor: "#28a745",
                                                     }}>
@@ -446,7 +440,7 @@ const Orders = () => {
                                                         borderRadius: 6,
                                                         alignItems: "center",
                                                         flexDirection: "row",
-                                                        justifyContent: "center",
+                                                        justifyContent: "flex-start",
                                                         paddingHorizontal: 14,
                                                         backgroundColor: AppTheme.ButtonGreenColor,
                                                     }}>
@@ -456,48 +450,43 @@ const Orders = () => {
                                                 </TouchableOpacity>
                                             }
                                         </View>
-                                        <View>
-                                            <Text style={[styles.heading,{color:isDarkTheme?"#FFF":"#000",fontSize:14,fontWeight:"700",marginTop:8}]}>
-                                                {`${val?.aptt_villa_office}, ${val?.building}`}
-                                            </Text>
-                                            <View style={{flexDirection:"row"}}>
-                                                <View style={{flex:1,justifyContent:"center"}}>
-                                                    {orderStatus === "Ready to Deliver" ? 
-                                                        <>
-                                                            <Text style={[styles.heading,{color:isDarkTheme?"#FFF":"#000",fontSize:14,fontWeight:"700",marginTop:8}]}>
-                                                                Delivery Date and Time
-                                                            </Text>
-                                                            <Text style={[styles.heading,{color:isDarkTheme?"#FFF":"#000"}]}>
-                                                                {val?.delivery_date}, {val?.delivery_time}
-                                                            </Text>
-                                                        </>
-                                                    : orderStatus === "Delivered" ? null :
-                                                        <>
-                                                            <Text style={[styles.heading,{color:isDarkTheme?"#FFF":"#000",fontSize:14,fontWeight:"700",marginTop:8}]}>
-                                                                Pickup Date and Time
-                                                            </Text>
-                                                            <Text style={[styles.heading,{color:isDarkTheme?"#FFF":"#000"}]}>
-                                                                {val?.pick_date}, {val?.pick_time}
-                                                            </Text>
-                                                        </>
-                                                    }
-                                                </View>
-                                                <TouchableOpacity 
-                                                    activeOpacity={.7}
-                                                    onPress={() => {
-                                                        if (orderStatus === "Pending") {
-                                                            routingHandle(val?.lat, val?.long);
-                                                        } else {
-                                                            routingHandle(val?.d_lat, val?.d_long);
-                                                        }
-                                                    }}
-                                                    style={{justifyContent:"center",paddingLeft:12}}>
-                                                    <Image
-                                                        source={require('../Assets/route-icon.png')}
-                                                        style={{height:50,width:50,resizeMode:"contain"}}
-                                                    />
-                                                </TouchableOpacity>
+                                        <View style={{flexDirection:"row",marginTop:12}}>
+                                            <View style={{flex:1,justifyContent:"center"}}>
+                                                {orderStatus === "Ready to Deliver" ? 
+                                                    <>
+                                                        <Text style={[styles.heading,{color:isDarkTheme?"#FFF":"#000",fontSize:14,fontWeight:"700",marginTop:8}]}>
+                                                            Delivery Date and Time
+                                                        </Text>
+                                                        <Text style={[styles.heading,{color:isDarkTheme?"#FFF":"#000"}]}>
+                                                            {val?.delivery_date === null ? "-----" : val?.delivery_date}, {val?.delivery_time === null ? "-----" : val?.delivery_time}
+                                                        </Text>
+                                                    </>
+                                                : orderStatus === "Delivered" ? null :
+                                                    <>
+                                                        <Text style={[styles.heading,{color:isDarkTheme?"#FFF":"#000",fontSize:14,fontWeight:"700",marginTop:8}]}>
+                                                            Pickup Date and Time
+                                                        </Text>
+                                                        <Text style={[styles.heading,{color:isDarkTheme?"#FFF":"#000"}]}>
+                                                            {val?.pick_date}, {val?.pick_time}
+                                                        </Text>
+                                                    </>
+                                                }
                                             </View>
+                                            <TouchableOpacity 
+                                                activeOpacity={.7}
+                                                onPress={() => {
+                                                    if (orderStatus === "Pending") {
+                                                        routingHandle(val?.lat, val?.long);
+                                                    } else {
+                                                        routingHandle(val?.d_lat, val?.d_long);
+                                                    }
+                                                }}
+                                                style={{justifyContent:"center",paddingLeft:12}}>
+                                                <Image
+                                                    source={require('../Assets/route-icon.png')}
+                                                    style={{height:50,width:50,resizeMode:"contain"}}
+                                                />
+                                            </TouchableOpacity>
                                         </View>
                                     </View>
                                 </TouchableOpacity>

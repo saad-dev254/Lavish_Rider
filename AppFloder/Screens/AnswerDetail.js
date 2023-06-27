@@ -242,14 +242,14 @@ const AnswerDetail = (props) => {
                 <View style={{ flexDirection: 'row', width: '85%', alignSelf: 'center', marginTop: 10, marginBottom: 30 }}>
                     {page != 0 &&
                         <TouchableOpacity onPress={() => { _funcBack() }} style={{ backgroundColor: "orange", flexDirection: 'row', paddingTop: 5, paddingBottom: 5, paddingStart: 10, paddingEnd: 10, borderRadius: 5, alignItems: 'flex-start' }}>
-                            <Icon name={'arrow-back-outline'} size={20} color={'white'} />
-                            <Text style={{ color: 'white' }}>Back</Text>
+                            <Icon name={'arrow-back-outline'} size={20} color={'#FFF'} />
+                            <Text style={{ color: '#FFF' }}>Back</Text>
                         </TouchableOpacity>
                     }
                     {page != questionsCount - 1 &&
                         <TouchableOpacity onPress={() => { _funcNext() }} style={{ backgroundColor: "orange", flexDirection: 'row', paddingTop: 5, paddingBottom: 5, paddingStart: 10, paddingEnd: 10, borderRadius: 5, alignItems: 'flex-start', position: 'absolute', right: 0 }}>
-                            <Text style={{ color: 'white' }}>Next</Text>
-                            <Icon name={'arrow-forward-outline'} size={20} color={'white'} />
+                            <Text style={{ color: '#FFF' }}>Next</Text>
+                            <Icon name={'arrow-forward-outline'} size={20} color={'#FFF'} />
                         </TouchableOpacity>
                     }
                 </View>
@@ -361,7 +361,7 @@ const ContactsView = ({ item }) => {
 
         <View style={{ flexDirection: "row", flex: 1, alignItems: "center", justifyContent: "center" }}>
             <TouchableOpacity style={{
-                backgroundColor: "white", width: '90%', alignSelf: "center", shadowColor: '#000000', shadowOffset: {
+                backgroundColor: "#FFF", width: '90%', alignSelf: "center", shadowColor: '#000000', shadowOffset: {
                     width: 0,
                     height: 5
                 },

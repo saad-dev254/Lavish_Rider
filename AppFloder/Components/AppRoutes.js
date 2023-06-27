@@ -6,7 +6,7 @@ import { AppTheme } from '../AppTheme/AppTheme'
 
 export function toHome() {
     const unSelectedTabColor = "grey"
-    const selectedTabColor = "white"
+    const selectedTabColor = "#FFF"
     const customFont = 'papyrus'
     const textFontSize = 12
     const selectedText = 12

@@ -15,7 +15,7 @@ const SigninCreate = () => {
         <View style={{ flex: 1 }}>
             <View style={{ flex: 1, backgroundColor: AppTheme.ButtonGreenColor, alignItems: 'flex-end' }}>
                 <View style={{ flex: 1 }} />
-                <View style={{ width: '80%', marginBottom: 60, alignItems: 'center', backgroundColor: "white", paddingBottom: 30, paddingHorizontal: 50, borderRadius: 30, alignSelf: "center" }}>
+                <View style={{ width: '80%', marginBottom: 60, alignItems: 'center', backgroundColor: "#FFF", paddingBottom: 30, paddingHorizontal: 50, borderRadius: 30, alignSelf: "center" }}>
                     <Text style={{ alignSelf: "center", marginLeft: 20, fontSize: 28, fontWeight: "bold", marginTop: 20 }}>Easy To Use</Text>
                     <TouchableOpacity 
                         activeOpacity={.7}
@@ -23,14 +23,14 @@ const SigninCreate = () => {
                         onPress={() => {
                             Navigation.push("AppStack",{component:{name:"Signin" , options: {  topBar: { backButton:{ visible: false}, visible: false , title : { text : ""} } } } })
                         }}>
-                        <Text style={{ color: "white" }}>
+                        <Text style={{ color: "#FFF" }}>
                             Sign In
                         </Text>
                     </TouchableOpacity>
 
                     <TouchableOpacity
                         activeOpacity={.7}
-                        style={{ width: "100%", backgroundColor: "white" , borderWidth : 1 , borderColor : AppTheme.ButtonGreenColor, marginTop: 20, height: 42, borderRadius: 20, alignItems: "center", justifyContent: "center" }} 
+                        style={{ width: "100%", backgroundColor: "#FFF" , borderWidth : 1 , borderColor : AppTheme.ButtonGreenColor, marginTop: 20, height: 42, borderRadius: 20, alignItems: "center", justifyContent: "center" }} 
                         onPress={() => {
                             Navigation.push("AppStack",{component:{name:"CreateAccount" , options: {  topBar: { backButton:{ visible: false}, visible: false , title : { text : ""} } } } })
                         }}>

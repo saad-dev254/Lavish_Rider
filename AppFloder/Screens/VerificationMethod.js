@@ -54,7 +54,7 @@ const VerificationMethodSelector = (props) => {
     };
 
     return (
-        <View style={{flex:1,backgroundColor:"white"}}>
+        <View style={{flex:1,backgroundColor:"#FFF"}}>
             <View style={{height:210,width:"100%",alignItems:"center",justifyContent:"center"}}>
                 <Image
                     blurRadius={1}
@@ -127,7 +127,7 @@ const VerificationMethodSelector = (props) => {
                     {otpLoader ? 
                         <ActivityIndicator color={"#FFF"} />
                     :
-                        <Text style={{ color: "white" }}>
+                        <Text style={{ color: "#FFF" }}>
                             {routeName === "Signin" ? "Confirm" : "Send Otp"}
                         </Text>
                     }

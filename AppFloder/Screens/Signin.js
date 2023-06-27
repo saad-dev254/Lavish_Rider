@@ -56,6 +56,7 @@ const Signin = () => {
                 .then((result) => {
                     setLoading(false);
                     if (result?.code === 200) {
+                        console.log("result?.userdata =====> ", result?.userdata);
                         AsyncStorage.setItem("accessToken", JSON.stringify(result?.token));
                         AsyncStorage.setItem("userData", JSON.stringify(result?.userdata));
                         Navigation.push("AppStack", {component: 
@@ -91,8 +92,8 @@ const Signin = () => {
     };
 
     return(
-        <View style={{flex:1}}>
-            <View style={{width:'100%',backgroundColor:isDarkTheme?"balck":"white",height:'70%',borderBottomRightRadius:30,borderBottomLeftRadius:30}}>
+        <View style={{flex:1,backgroundColor:isDarkTheme?"#000":"#FFF"}}>
+            <View style={{width:'100%',backgroundColor:isDarkTheme?"#000":"#FFF",height:'70%',borderBottomRightRadius:30,borderBottomLeftRadius:30}}>
                 <View style={{height:210,width:"100%",alignItems:"center",justifyContent:"center"}}>
                     {/* <Image
                         blurRadius={1}
@@ -167,7 +168,7 @@ const Signin = () => {
                             alignItems:"center",
                             justifyContent:"center"
                         }}>
-                        <Text style={{ color: "white" }}>
+                        <Text style={{ color: "#FFF" }}>
                             Sign In
                         </Text>
                     </TouchableOpacity>

@@ -24,7 +24,13 @@ const SideBar = (props) => {
                 animationOut={"slideOutLeft"}>
                 <View style={{flex:1,backgroundColor:isDarkTheme?'#000':"#FFF"}}>
                     <ScrollView>
-                        <TouchableOpacity 
+                        <View style={{alignItems:"center",justifyContent:"center"}}>
+                            <Image
+                                source={require("../Assets/lavish-laoundry.png")}
+                                style={{height:160,width:"100%",resizeMode:"contain"}}
+                            />
+                        </View>
+                        {/* <TouchableOpacity 
                             activeOpacity={.7}
                             onPress={() => {
                                 toggleModal();
@@ -45,7 +51,7 @@ const SideBar = (props) => {
                                     {userData?.email}
                                 </Text>
                             </View>
-                        </TouchableOpacity>
+                        </TouchableOpacity> */}
                         <View style={{paddingHorizontal:16}}>
                             <TouchableOpacity 
                                 activeOpacity={.7}
@@ -141,6 +147,25 @@ const SideBar = (props) => {
                             </TouchableOpacity>
                         </View>
                     </ScrollView>
+                    <TouchableOpacity 
+                        activeOpacity={.7}
+                        style={{flexDirection:"row",paddingVertical:20,paddingHorizontal:16}}
+                        onPress={() => {
+                            toggleModal();
+                            Navigation.push("AppStack",{component:{name:"ContactUs" , options: { topBar: { backButton:{ visible: true}, visible: true , title : { text : "ContactUs"} } } } })
+                        }}>
+                        <View style={{justifyContent:"center"}}>
+                            <Image 
+                                source={require("../Assets/logout.png")}
+                                style={{height:20,width:20,resizeMode:"contain",tintColor:isDarkTheme?'#FFF':"#gray"}}
+                            />
+                        </View>
+                        <View style={{flex:1,justifyContent:"center",marginLeft:20}}>
+                            <Text style={{fontSize:16,color:isDarkTheme?'#FFF':"#gray",fontWeight:"700"}}>
+                                Logout
+                            </Text>
+                        </View>
+                    </TouchableOpacity>
                     <View style={{borderTopWidth:1,borderTopColor:"#CCC",paddingVertical:10}}>
                         <Text style={{fontSize:16,color:isDarkTheme?'#FFF':"#gray",fontWeight:"bold",textAlign:"center"}}>
                             V1.0.0

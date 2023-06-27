@@ -150,7 +150,7 @@ const ContactsView = ({ item }) => {
 
         <View style={{ flexDirection: "row", flex: 1, alignItems: "center", justifyContent: "center" }}>
                   <TouchableOpacity style={{
-                backgroundColor: "white", width: '90%', alignSelf: "center" , shadowColor: '#000000', shadowOffset: {
+                backgroundColor: "#FFF", width: '90%', alignSelf: "center" , shadowColor: '#000000', shadowOffset: {
                     width: 0,
                     height: 5
                 },

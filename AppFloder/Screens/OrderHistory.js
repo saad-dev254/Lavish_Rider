@@ -102,9 +102,9 @@ const OrderHistory = (props) => {
                                     Pickup Detail:
                                 </Text>
                             </View>
-                            <TouchableOpacity 
-                                activeOpacity={.7}
-                                onPress={() => setOrderStatusModal(!orderStatusModal)}
+                            <View 
+                                // activeOpacity={.7}
+                                // onPress={() => setOrderStatusModal(!orderStatusModal)}
                                 style={{
                                     height: 40,
                                     marginLeft: 20,
@@ -122,11 +122,11 @@ const OrderHistory = (props) => {
                                 <Text style={styles.statusText}>
                                     {orderStatus === "" ? orderDetail?.order_status : orderStatus}
                                 </Text>
-                                <Image 
+                                {/* <Image 
                                     source={require('../Assets/down-arrow.png')} 
                                     style={{height:24,width:24,resizeMode:"contain",tintColor:"#FFF",marginLeft:6}}
-                                />
-                            </TouchableOpacity>
+                                /> */}
+                            </View>
                         </View>
                         <View style={{marginBottom:12}}>
                             <Text style={[styles.heading,{color:isDarkTheme?"#FFF":"#000",fontSize:14,fontWeight:"700",marginBottom:6}]}>

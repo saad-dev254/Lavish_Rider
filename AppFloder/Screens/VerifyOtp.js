@@ -112,7 +112,7 @@ const VerifyOtp = (props) => {
     };
 
     return (
-        <View style={[styles.continer,{backgroundColor:isDarkTheme?"balck":"white"}]}>
+        <View style={[styles.continer,{backgroundColor:isDarkTheme?"#000":"#FFF"}]}>
             <View style={{height:210,width:"100%",alignItems:"center",justifyContent:"center"}}>
                 {/* <Image
                     blurRadius={1}
@@ -237,7 +237,7 @@ const styles = StyleSheet.create({
         color: "#000",
         justifyContent: "center",
         backgroundColor: "#F2F2F2",
-        borderColor: useColorScheme.theme ? "#FFF" : "white",
+        borderColor: useColorScheme.theme ? "#FFF" : "#FFF",
         borderWidth: 1,
     },
     otpBoxMain: {
