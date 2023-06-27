@@ -1,0 +1,91 @@
+{
+  "project_info": {
+    "project_number": "1019680806607",
+    "firebase_url": "https://dark-geography-324211-default-rtdb.firebaseio.com",
+    "project_id": "dark-geography-324211",
+    "storage_bucket": "dark-geography-324211.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1019680806607:android:092b316a77c4fcd56389ba",
+        "android_client_info": {
+          "package_name": "com.lavishlaundry.rider"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1019680806607-bbh8jpkbrusfem171tav2vie0sgma5ul.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQPUc6VI6RrthxujOCIPsq56YHkUHCwMQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1019680806607-bbh8jpkbrusfem171tav2vie0sgma5ul.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1019680806607-16f07ffe3u9kq6m0kj2pr96nl2nbccbn.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.lavishlaundry.rider"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1019680806607:android:b2cd1d00570029c06389ba",
+        "android_client_info": {
+          "package_name": "com.lavishlaundry.rider"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1019680806607-p14kt0lqok4ahlgitf8cc3o2n5ffvpcj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.lavishlaundry.rider",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "1019680806607-bbh8jpkbrusfem171tav2vie0sgma5ul.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQPUc6VI6RrthxujOCIPsq56YHkUHCwMQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1019680806607-bbh8jpkbrusfem171tav2vie0sgma5ul.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1019680806607-16f07ffe3u9kq6m0kj2pr96nl2nbccbn.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.lavishlaundry.rider"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
