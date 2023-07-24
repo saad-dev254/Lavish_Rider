@@ -138,8 +138,8 @@ android {
         applicationId "com.lavishlaundry.rider"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 1
-        versionName "1.0"
+        versionCode 12
+        versionName "2.2.0"
         buildConfigField "boolean", "IS_NEW_ARCHITECTURE_ENABLED", isNewArchitectureEnabled().toString()
 
         configurations.all {
@@ -233,10 +233,10 @@ android {
             keyPassword 'android'
         }
         release {
-            storeFile file('your_key_name.keystore')
-            storePassword '123456'
-            keyAlias 'your_key_alias'
-            keyPassword '123456'
+            storeFile file('lavishriderkey.keystore')
+            storePassword 'lavishriderkey'
+            keyAlias 'lavishriderkey'
+            keyPassword 'lavishriderkey'
         }
     }
     buildTypes {
@@ -246,7 +246,7 @@ android {
         release {
             // Caution! In production, you need to generate your own keystore file.
             // see https://reactnative.dev/docs/signed-apk-android.
-            signingConfig signingConfigs.debug
+            signingConfig signingConfigs.release
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
         }

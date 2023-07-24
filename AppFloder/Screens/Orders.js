@@ -47,11 +47,10 @@ const Orders = () => {
     const getOrdersHandle = async () => {
         try {
             const user_data = JSON.parse(await AsyncStorage.getItem("userData"));
-            console.log("USER ID =====> ", user_data?.id);
             setLoader(true);
 
             var formdata = new FormData();
-            formdata.append("id", "23");
+            formdata.append("id", user_data?.id);
 
             var requestOptions = {
                 method: 'POST',
@@ -84,9 +83,6 @@ const Orders = () => {
             var formdata = new FormData();
             formdata.append("order_id", orderId);
             formdata.append("order_status", order_status);
-
-            console.log("orderId =-===? ", orderId);
-            console.log("order_status =-===? ", order_status);
 
             var requestOptions = {
                 method: 'POST',
